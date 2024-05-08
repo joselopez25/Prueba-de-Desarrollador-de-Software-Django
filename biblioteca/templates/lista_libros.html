@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Libros</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* Estilos para la barra de navegación */
+        .navbar {
+            background-color: #007bff;
+            padding: 10px 20px;
+            color: #fff;
+            text-align: center;
+        }
+    
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+    
+        .navbar a:hover {
+            color: #0056b3;
+        }
+    
+        /* Estilos para la lista de libros */
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+    
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+    
+        li a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+    
+        li a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "nav_bar.html" %}
+    <h1>Lista de Libros</h1>
+    <ul>
+        {% for libro in libros %}
+        <li class="nav-item">
+            <a href="{% url 'detalles_libro' pk=libro.pk %}">{{ libro.titulo }} - {{ libro.autor }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

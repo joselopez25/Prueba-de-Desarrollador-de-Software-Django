@@ -1,0 +1,67 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff; /* Fondo blanco */
+  color: #000; /* Texto negro */
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  background-color: #007bff; /* Azul */
+  padding: 10px 20px;
+}
+
+.navbar a {
+  color: #fff; /* Texto blanco */
+  text-decoration: none;
+  transition: color 0.3s; /* Transición suave del color */
+}
+
+.navbar a:hover {
+  color: #0056b3; /* Color azul oscuro al pasar el mouse */
+}
+
+/* Estilos para los botones */
+.button {
+  background-color: #007bff; /* Azul */
+  color: #fff; /* Texto blanco */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Color azul oscuro al pasar el mouse */
+}
+
+/* Estilos para los formularios */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para los mensajes de error */
+.error-message {
+  color: #ff0000; /* Texto rojo para mensajes de error */
+}
+
+/* Estilos para las tablas */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2; /* Fondo gris claro para encabezados de tabla */
+}

@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <style>
+    /* Estilos generales */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Estilos para la barra de navegación */
+    .navbar {
+        background-color: #007bff;
+        padding: 10px 20px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+        color: #0056b3;
+    }
+
+    /* Estilos para la lista de libros */
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    li a {
+        text-decoration: none;
+        color: #007bff;
+        transition: color 0.3s;
+    }
+
+    li a:hover {
+        color: #0056b3;
+    }
+</style>
+  <a class="navbar-brand" href="#">Mi Sitio</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <!-- Opciones de navegación comunes -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'lista_libros' %}">Libros</a>
+      </li>
+      {% if request.user.rol == 'administrador' %}
+      <!-- Opción de navegación para administradores -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'crear_libro' %}">Agregar Libro</a>
+      </li>
+      {% else %}
+      <!-- Opciones de navegación para usuarios regulares -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'tomar_devolver_libro' %}">Prestar/Devolver</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'libros_prestados_entregados' %}">Mi Historial</a>
+      </li>
+      {% endif %}
+    </ul>
+    <!-- Botón de logout -->
+    <form class="form-inline my-2 my-lg-0" action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar sesión</button>
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro {{libro.titulo}}</title>
+    <style>
+      /* Estilos generales */
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 0;
+      }
+
+      /* Estilos para la barra de navegación */
+      .navbar {
+          background-color: #007bff;
+          color: #fff;
+          padding: 10px 20px;
+          text-align: center;
+      }
+
+      .navbar a {
+          color: #fff;
+          text-decoration: none;
+          transition: color 0.3s;
+      }
+
+      .navbar a:hover {
+          color: #0056b3;
+      }
+
+      /* Estilos para los detalles del libro */
+      h1 {
+          text-align: center;
+          margin-top: 20px;
+      }
+
+      ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+      }
+
+      li {
+          padding: 10px;
+          border-bottom: 1px solid #ccc;
+      }
+
+      li:first-child {
+          border-top: 1px solid #ccc;
+      }
+  </style>
+</head>
+<body>
+  {% include "nav_bar.html" %}
+  <h1>Detalles del Libro</h1>
+  <ul>
+      <li>Título: {{ libro.titulo }}</li>
+      <li>Autor: {{ libro.autor }}</li>
+      <li>Año de Publicación: {{ libro.año_publi}}</li>
+      <li>Cantidad en Stock: {{ libro.stock }}</li>
+  </ul>
+</body>
+</html>
